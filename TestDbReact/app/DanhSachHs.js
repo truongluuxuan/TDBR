@@ -68,6 +68,8 @@ export default class ShowDataActivity extends Component
  
   render()
   {
+
+    const { navigate } = this.props.navigation;
     //sự kiện quay lại hoặc thoát màn hình hiện tại
     const {goBack} = this.props.navigation;
  
@@ -91,9 +93,11 @@ export default class ShowDataActivity extends Component
  
             renderSeparator= {this.ListViewItemSeparator}
  
-            renderRow={(rowData) => <View style={{flex:1, flexDirection: 'column'}} >
+            renderRow={(rowData) =>
+             <View style={{flex:1, flexDirection: 'column'}} >
  
-                      <TouchableOpacity onPress={this.GetClickedItem.bind(this, rowData.student_name)} >
+                     
+					             <TouchableOpacity onPress={() => navigate('chitietsv', {prevScreenTitle: 'ShowDataActivity', people: rowData})} >
                     
                       <Text style={styles.textViewContainer} >{'id = ' + rowData.student_id}</Text>
               
@@ -105,7 +109,7 @@ export default class ShowDataActivity extends Component
               
                       </TouchableOpacity>
               
-                    </View> }
+              </View> }
  
             />
  

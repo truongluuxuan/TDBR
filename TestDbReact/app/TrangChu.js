@@ -178,10 +178,10 @@ export default class MainActivity extends Component{
            {
              overflow:"hidden",
              margin:10,
-             borderWidth: 1,
+             borderWidth: 1.5,
              borderColor: '#009688',
              height: 40,
-             borderRadius: 10,
+             borderRadius: 7,
              marginBottom: 10,
              textAlign: 'center',
            },
