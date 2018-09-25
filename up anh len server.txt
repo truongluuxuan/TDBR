@@ -1,0 +1,16 @@
+https://github.com/vanpho93/react-native-picker-upload
+
+vidu db trong react native:
+
+https://reactnativecode.com/show-realm-database-data-into-listview/
+
+fix loi realm trong ios
+https://github.com/realm/realm-js/issues/1340
+
+tach expo
+https://code.tutsplus.com/tutorials/detaching-expo-apps-to-expokit--cms-30698
+
+cai dat moi truong macos
+
+
+https://blog.cloudboost.io/react-native-setup-on-macos-aedb1a44f527

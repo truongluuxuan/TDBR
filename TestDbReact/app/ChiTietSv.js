@@ -1,21 +1,20 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+
 
 import React, { Component } from 'react';
 import {
   Platform,
+  TouchableOpacity,
+  Image,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import styles from './StylesChung';
 
 export default class ChiTietSv extends Component {
   static navigationOptions = {
     title: 'First Screen',
-    header: null ,
+    header: null,
   };
 
   constructor(props) {
@@ -28,21 +27,27 @@ export default class ChiTietSv extends Component {
   }
 
   render() {
+    //quay lại màn hình trước<=> thoát màn hình hiện tại
+    const { goBack } = this.props.navigation;
+
+
     return (
-      <View style={styles.container}>
-    
+      <View>
+      <View style={{ flexDirection: 'row' }}>
+          <View style={styles.HeaderScreen}>
+            <TouchableOpacity onPress={() => goBack()} >
+              <Image style={styles.ImageBack} source={require('../images/back_icon.png')}
+              />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.ViewOfTextHeader}>
+            <Text style={styles.HeaderScreen} onPress={() => goBack()}>Chi Tiết Sinh Viên</Text>
+          </View>
+        </View>
+
         <Text>Tên tao là: {this.state.people.student_name} Tao học lớp {this.state.people.student_class} Môn tao học {this.state.people.student_subject}</Text>
-      
+
       </View>
     );
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
+};
